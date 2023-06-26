@@ -16,10 +16,18 @@ public class CommenGroupController {
 	@RequestMapping("/commenGroupList")
 	public String commenGroupList(Model model) {
 		
-		List<CommenGroup> list = service.selectList();
+		List<CommenGroup> list = service.selectList(model);
 		model.addAttribute("list",list);
 		
 		return "commenGroupList";
+	}
+	@RequestMapping("/commenGroupfix")
+	public String commenGroupOne(CommenGroupVo vo,Model model) {
+		
+		CommenGroup item = service.selectOne(vo,model);
+		model.addAttribute("item",item);
+		
+		return "commenGroupfix";
 	}
 	
 }

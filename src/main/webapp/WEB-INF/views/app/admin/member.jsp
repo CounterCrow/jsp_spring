@@ -325,7 +325,7 @@
         </table>
         <!-- End Table with stripped rows -->
   </section>
-
+ <button class="btn btn-secondary" type="button"><i class="bi bi-search"></i></button>
   </main><!-- End #main -->
 <!-- 체크박스 스크립트 -->
 <script>

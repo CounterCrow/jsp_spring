@@ -17,7 +17,8 @@ public class CommenGroupDao {
 	
 	private static String namespace = "com.mycompany.app.commenGroup.CommenGroupMapper";
 	
-	public List<CommenGroup> selectList(){ return sqlSession.selectList(namespace + ".selectList", ""); }
+	public List<CommenGroup> selectList(){ return sqlSession.selectList(namespace + ".selectList","" ); }
+	public CommenGroup selectOne(CommenGroupVo vo){ return sqlSession.selectOne(namespace + ".selectOne", vo ); }
 	
 //	public List<CodeGroup> selectList(){ 
 //		return sqlSession.selectList(namespace + ".selectList", ""); 

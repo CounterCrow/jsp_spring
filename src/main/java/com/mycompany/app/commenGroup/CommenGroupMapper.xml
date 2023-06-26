@@ -10,6 +10,15 @@
     		SELECT *
     		FROM
     				commen_Group
+ 				WHERE 
+ 					 commenGroupName LIKE CONCAT('%',#{Keyword},'%')
+    </select>
+    <select id="selectOne" resultMap="resultMapObj">		
+    		SELECT *
+    		FROM
+    				commen_Group
+ 				WHERE 
+ 					 seq = #{seq}
     </select>
 
 </mapper>    
