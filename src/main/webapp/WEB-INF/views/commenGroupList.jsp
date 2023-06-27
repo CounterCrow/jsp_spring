@@ -11,7 +11,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>사용자관리</title>
+  <title>코드 관리</title>
   <meta content="" name="description">
   <meta content="" name="---------">
 
@@ -222,7 +222,7 @@
           <fieldset disabled>
           <div class="input-group input-group-sm mb-3 w-25 inputseq">
             <span class="input-group-text" id="inputGroup-sizing-sm">Seq</span>
-            <input type="text" class="form-control" placeholder="#">
+            <input type="text" class="form-control" placeholder="#" value = "">
           </div>
         </fieldset>
           <div class="input-group input-group-sm mb-3 w-25">
@@ -261,6 +261,7 @@
             <tr>
               <th scope="col">#</th>
               <th scope="col">Name</th>
+              <!-- <th scope="col">delNY</th> -->
               </tr>
           </thead>
           <tbody>
@@ -275,6 +276,7 @@
 					<tr>
 						<td><c:out value="${list.seq }"></c:out></td>
 						<td><a href="/commenGroupfix?seq=<c:out value="${list.seq}"></c:out>"><c:out value="${list.commenGroupName }"></c:out></a></td>
+						<%-- <td><c:out value="${list.delNY}"></c:out></td> --%>
 					</tr>
 					</c:forEach>
 				</c:otherwise>
@@ -283,7 +285,7 @@
         </table>
         <!-- End Table with stripped rows -->
   </section>
- <button class="btn btn-secondary" type="button"><i class="bi bi-search"></i></button>
+ <button class="btn btn-secondary" type="button">추가</button>
   </main><!-- End #main -->
 <!-- 체크박스 스크립트 -->
 <script>

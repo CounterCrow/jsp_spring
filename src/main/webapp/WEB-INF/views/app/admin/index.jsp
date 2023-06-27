@@ -174,8 +174,8 @@
         </a>
         <ul id="forms-nav2" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="#">
-              <i class="bi bi-circle"></i><span>트레픽 관리</span>
+            <a href="/commenGroupList">
+              <i class="bi bi-circle"></i><span>코드관리</span>
             </a>
           </li>
           <li>

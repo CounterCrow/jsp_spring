@@ -19,6 +19,10 @@ public class CommenGroupDao {
 	
 	public List<CommenGroup> selectList(){ return sqlSession.selectList(namespace + ".selectList","" ); }
 	public CommenGroup selectOne(CommenGroupVo vo){ return sqlSession.selectOne(namespace + ".selectOne", vo ); }
+	public int update(CommenGroup dto){ return sqlSession.update(namespace + ".update", dto ); }
+	public int delete(CommenGroup dto){ return sqlSession.delete(namespace + ".delete", dto ); }
+	public int save(CommenGroup dto){ return sqlSession.insert(namespace + ".save", dto ); }
+	public int updele(CommenGroup dto){ return sqlSession.update(namespace + ".updele", dto ); }
 	
 //	public List<CodeGroup> selectList(){ 
 //		return sqlSession.selectList(namespace + ".selectList", ""); 

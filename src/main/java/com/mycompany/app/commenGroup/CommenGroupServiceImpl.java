@@ -18,9 +18,34 @@ public class CommenGroupServiceImpl implements CommenGroupService{
 	}
 
 	@Override
-	public CommenGroup selectOne(CommenGroupVo vo,Model model) {
+	public CommenGroup selectOne(CommenGroupVo vo) {
 		
 		return dao.selectOne(vo);
+	}
+
+	@Override
+	public int update(CommenGroup dto) {
+		
+		return dao.update(dto);
+	}
+
+	@Override
+	public int delete(CommenGroup dto) {
+		
+		return dao.delete(dto);
+	}
+
+	@Override
+	public int save(CommenGroup dto) {
+		
+		return dao.save(dto);
+	
+	}
+
+	@Override
+	public int updele(CommenGroup dto) {
+		
+		return dao.updele(dto);
 	}
 
 		

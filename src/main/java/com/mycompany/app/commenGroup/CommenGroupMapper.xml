@@ -12,6 +12,8 @@
     				commen_Group
  				WHERE 
  					 commenGroupName LIKE CONCAT('%',#{Keyword},'%')
+ 				AND
+ 					delNY = 0	 
     </select>
     <select id="selectOne" resultMap="resultMapObj">		
     		SELECT *
@@ -20,5 +22,34 @@
  				WHERE 
  					 seq = #{seq}
     </select>
+    <update id="update">		
+    			UPDATE commen_Group
+ 				SET
+ 					commenGroupName = #{commenGroupName}
+ 					, delNY = 0
+ 				WHERE				
+ 					 seq = #{seq}
+    </update>
+    <delete id="delete">		
+    			DELETE 
+    			FROM 
+    					commen_Group
+ 				WHERE				
+	 					 seq = #{seq}
+    </delete>
+    <insert id="save">
+    			INSERT
+    			INTO 	commen_Group
+    					(seq, commenGroupName, delNY)
+				VALUES
+    					(#{seq},#{commenGroupName},0)
+    </insert>
+     <update id="updele">		
+    			UPDATE commen_Group
+ 				SET
+ 					delNY = "1"
+ 				WHERE				
+ 					 seq = #{seq}
+    </update>
 
 </mapper>    

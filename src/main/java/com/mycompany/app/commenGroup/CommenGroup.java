@@ -10,6 +10,7 @@ public class CommenGroup {
 	
 	private String seq;
 	private String commenGroupName;
+	private String delNY;
 	private String commenGroupNameEng;
 	private String commenGroupOrder;
 	private Integer regSeq;
@@ -32,6 +33,13 @@ public class CommenGroup {
 	}
 	public void setCommenGroupName(String commenGroupName) {
 		this.commenGroupName = commenGroupName;
+	}
+	
+	public String getDelNY() {
+		return delNY;
+	}
+	public void setDelNY(String delNY) {
+		this.delNY = delNY;
 	}
 	public String getCommenGroupNameEng() {
 		return commenGroupNameEng;
