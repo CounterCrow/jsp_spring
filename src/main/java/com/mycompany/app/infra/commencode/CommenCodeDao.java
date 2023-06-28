@@ -1,4 +1,4 @@
-package com.mycompany.app.commencode;
+package com.mycompany.app.infra.commencode;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ public class CommenCodeDao {
 	@Resource
 	private SqlSession sqlSession;
 	
-	private static String namespace = "com.mycompany.app.commencode.CommenCodeMapper";
+	private static String namespace = "com.mycompany.app.infra.commencode.CommenCodeMapper";
 	
 	public List<CommenCode> selectList(){ return sqlSession.selectList(namespace + ".selectList", ""); }
 }

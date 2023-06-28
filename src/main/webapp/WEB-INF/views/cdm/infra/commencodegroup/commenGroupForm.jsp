@@ -6,7 +6,7 @@
 
 
 <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-<form name="form" method="post" action="/com.mycompany.app.commenGroup.CommenGroupController">
+<form name="form" method="post" action="/com.mycompany.app.infra.commenGroup.CommenGroupController">
 <input type="text" id="seq" name = "seq"  value="<c:out value="${ item.seq}"/>">
 <input type="text" id="commenGroupName" name = "commenGroupName"  value="<c:out value="${ item.commenGroupName}"/>">
 <button class="btn btn-secondary" id="shbtn"  type="button"><i class="bi bi-search"></i></button>

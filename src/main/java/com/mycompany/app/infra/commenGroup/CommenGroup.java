@@ -1,4 +1,4 @@
-package com.mycompany.app.commenGroup;
+package com.mycompany.app.infra.commenGroup;
 
 import javax.print.attribute.standard.DateTimeAtCompleted;
 

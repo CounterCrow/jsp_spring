@@ -1,4 +1,4 @@
-package com.mycompany.app.commencode;
+package com.mycompany.app.infra.commencode;
 
 public class CommenCode {
 

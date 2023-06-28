@@ -275,7 +275,7 @@
 					<c:forEach items="${list}" var="list" varStatus="status">
 					<tr>
 						<td><c:out value="${list.seq }"></c:out></td>
-						<td><a href="/commenGroupfix?seq=<c:out value="${list.seq}"></c:out>"><c:out value="${list.commenGroupName }"></c:out></a></td>
+						<td><a href="/commenGroupForm?seq=<c:out value="${list.seq}"></c:out>"><c:out value="${list.commenGroupName }"></c:out></a></td>
 						<%-- <td><c:out value="${list.delNY}"></c:out></td> --%>
 					</tr>
 					</c:forEach>

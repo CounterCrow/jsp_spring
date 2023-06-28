@@ -1,4 +1,4 @@
-package com.mycompany.app.commenGroup;
+package com.mycompany.app.infra.commenGroup;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ public class CommenGroupDao {
 	@Resource(name = "sqlSession")  // 멀티DB사용시 사용
 	private SqlSession sqlSession;
 	
-	private static String namespace = "com.mycompany.app.commenGroup.CommenGroupMapper";
+	private static String namespace = "com.mycompany.app.infra.commenGroup.CommenGroupMapper";
 	
 	public List<CommenGroup> selectList(){ return sqlSession.selectList(namespace + ".selectList","" ); }
 	public CommenGroup selectOne(CommenGroupVo vo){ return sqlSession.selectOne(namespace + ".selectOne", vo ); }

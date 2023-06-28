@@ -8,23 +8,23 @@
   
   @RequestMapping(value="/") public String portfolioHome() {
   
-  return "app/portfolio/index"; }
+  return "portfolio/index"; }
   
   @RequestMapping(value="/portfolioLogin") public String portfolioLogin() {
   
-  return "app/portfolio/login"; }
+  return "portfolio/login"; }
   
   @RequestMapping(value="/admin") public String admin() {
   
-  return "app/admin/index"; }
+  return "cdm/infra/index/index"; }
   
   @RequestMapping(value="/member") public String adminMember() {
   
-  return "app/admin/member"; }
+  return "cdm/infra/index/member"; }
   
   @RequestMapping(value="/product") public String adminProduct() {
   
-  return "app/admin/product"; }
+  return "cdm/infra/index/product"; }
   
   }
  

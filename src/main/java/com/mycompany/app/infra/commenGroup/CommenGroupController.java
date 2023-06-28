@@ -1,4 +1,4 @@
-package com.mycompany.app.commenGroup;
+package com.mycompany.app.infra.commenGroup;
 
 import java.util.List;
 
@@ -21,43 +21,43 @@ public class CommenGroupController {
 		List<CommenGroup> list = service.selectList(model);
 		model.addAttribute("list",list);
 		
-		return "commenGroupList";
+		return "cdm/infra/commencodegroup/commenGroupList";
 	}
-	@RequestMapping("/commenGroupfix")
+	@RequestMapping("/commenGroupForm")
 	public String commenGroupOne(CommenGroupVo vo,Model model) {
 		
 		CommenGroup item = service.selectOne(vo);
 		model.addAttribute("item",item);
 		
-		return "commenGroupfix";
+		return "cdm/infra/commencodegroup/commenGroupForm";
 	}
 	@RequestMapping("/commenGroupUpdate")
 	public String commenGroupUpdate(CommenGroup dto) {
 		
 		service.update(dto);
 	
-		return "redirect:/commenGroupList";
+		return "redirect:/cdm/infra/commencodegroup/commenGroupList";
 	}
 	@RequestMapping("/commenGroupDelete")
 	public String commenGroupDelete(CommenGroup dto) {
 		
 		service.delete(dto);
 	
-		return "redirect:/commenGroupList";
+		return "redirect:/cdm/infra/commencodegroup/commenGroupList";
 	}
 	@RequestMapping("/commenGroupSave")
 	public String commenGroupSave(CommenGroup dto) {
 		
 		service.save(dto);
 	
-		return "redirect:/commenGroupList";
+		return "redirect:/cdm/infra/commencodegroup/commenGroupList";
 	}
 	@RequestMapping("/commenGroupUpdele")
 	public String commenGroupUpdele(CommenGroup dto) {
 		
 		service.updele(dto);
 	
-		return "redirect:/commenGroupList";
+		return "redirect:/cdm/infra/commencodegroup/commenGroupList";
 	}
  
   }
