@@ -36,29 +36,32 @@ public class CommenGroupController {
 		
 		service.update(dto);
 	
-		return "redirect:/cdm/infra/commencodegroup/commenGroupList";
+		return "redirect:/commenGroupList";
 	}
 	@RequestMapping("/commenGroupDelete")
 	public String commenGroupDelete(CommenGroup dto) {
 		
 		service.delete(dto);
 	
-		return "redirect:/cdm/infra/commencodegroup/commenGroupList";
+		return "redirect:/commenGroupList";
 	}
 	@RequestMapping("/commenGroupSave")
 	public String commenGroupSave(CommenGroup dto) {
 		
 		service.save(dto);
 	
-		return "redirect:/cdm/infra/commencodegroup/commenGroupList";
+		return "redirect:/commenGroupList";
 	}
 	@RequestMapping("/commenGroupUpdele")
 	public String commenGroupUpdele(CommenGroup dto) {
 		
 		service.updele(dto);
 	
-		return "redirect:/cdm/infra/commencodegroup/commenGroupList";
+		return "redirect:/commenGroupList";
 	}
+	@RequestMapping(value="/commenGroupCreate") public String commenGroupCreate() {
+		  
+		  return "cdm/infra/commencodegroup/commenGroupCreate"; }
  
   }
  

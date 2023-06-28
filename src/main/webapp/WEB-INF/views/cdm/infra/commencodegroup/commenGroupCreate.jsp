@@ -11,7 +11,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>코드 수정</title>
+  <title>코드 추가</title>
   <meta content="" name="description">
   <meta content="" name="---------">
 
@@ -122,7 +122,7 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>코드 수정</h1>
+      <h1>코드 추가</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -139,7 +139,7 @@
         <div class="card-search">
           <div class="input-group input-group-sm mb-3 w-25 inputseq">
             <span class="input-group-text" id="inputGroup-sizing-sm">Seq</span>
-            <input type="text" class="form-control" id="seq" name = "seq"  value = "<c:out value="${ item.seq}"/>" readonly>
+            <input type="text" class="form-control" id="seq" name = "seq"  value = "<c:out value="${ item.seq}"/>" >
           </div>
           <div class="input-group input-group-sm mb-3 w-25">
             <span class="input-group-text" id="inputGroup-sizing-sm">코드 그룹 이름</span>
@@ -148,9 +148,9 @@
          
             <div class="btn-box d-grid gap-2 d-md-flex justify-content-md-end">
 	            <!-- <button class="btn btn-secondary" id="btnSave"  type="button">save</button> -->
-	            <button class="btn btn-secondary" id="btnUpdate"  type="button">update</button>
+	            <button class="btn btn-secondary" id="btnSave"  type="button">Save</button>
 				<!-- <button class="btn btn-secondary" id="btnDelete"  type="button">delete</button> -->
-				<button class="btn btn-danger" id="btnUpdele"  type="button">Updele</button>
+				<!-- <button class="btn btn-danger" id="btnUpdele"  type="button">Updele</button> -->
             </div>
             
          </div>
@@ -164,14 +164,14 @@
 
 <script type="text/javascript">
 
-$("#btnUpdate").on("click", function(){
-	
 		// 자기 자신을 다시 한 번 호출해준다.
 		/* $("form[name=formList]").attr("method", "post"); */
+/* $("#btnUpdate").on("click", function(){
+	
 		$("form[name=form]").attr("action", "/commenGroupUpdate").submit();
 
 	}
-);
+); */
 /* $("#btnDelete").on("click", function(){
 	
 	$("form[name=form]").attr("action", "/commenGroupDelete").submit();
@@ -190,12 +190,12 @@ $("#btnSave").on("click", function(){
 	 
 }
 );
-$("#btnUpdele").on("click", function(){
+/* $("#btnUpdele").on("click", function(){
 	
 	$("form[name=form]").attr("action", "/commenGroupUpdele").submit();
 	 
 }
-);
+); */
 
 </script>  
 

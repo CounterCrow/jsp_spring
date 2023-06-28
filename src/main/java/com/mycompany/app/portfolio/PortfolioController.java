@@ -10,9 +10,9 @@
   
   return "portfolio/index"; }
   
-  @RequestMapping(value="/portfolioLogin") public String portfolioLogin() {
+  @RequestMapping(value="/portfolioLoginAdmin") public String portfolioLoginAdmin() {
   
-  return "portfolio/login"; }
+  return "cdm/login"; }
   
   @RequestMapping(value="/admin") public String admin() {
   
@@ -25,6 +25,7 @@
   @RequestMapping(value="/product") public String adminProduct() {
   
   return "cdm/infra/index/product"; }
+  
   
   }
  

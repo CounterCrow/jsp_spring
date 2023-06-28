@@ -108,7 +108,7 @@
               <img src="/resources/portfolio/assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="/resources/portfolio/assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1">user</a>
-                <a href="portfolioLogin">admin</a>
+                <a href="portfolioLoginAdmin">admin</a>
               </div>
             </div>
             <p>AI이미지 검색을 이용한 키보드 마우스 판매 사이트</p>
