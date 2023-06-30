@@ -24,73 +24,8 @@
   <%@ include file="../../include/header.jsp"%>
  
   <!-- ======= Sidebar ======= -->
-  <aside id="sidebar" class="sidebar">
-
-    <ul class="sidebar-nav" id="sidebar-nav">
-
-      <li class="nav-item">
-        <a class="nav-link " href="admin">
-          <i class="bi bi-grid"></i>
-          <span>Dashboard</span>
-        </a>
-      </li>
-      <!-- End Dashboard Nav -->
-      <!-- 사이드바 -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Member</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="components-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="/member.html">
-              <i class="bi bi-circle"></i><span>사용자관리</span>
-            </a>
-          </li>
-        </ul>
-      </li>
-      <!-- End Management Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-journal-text"></i><span>Product</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="product">
-              <i class="bi bi-circle"></i><span>제품 관리</span>
-            </a>
-          </li>
-        </ul>
-      </li>
-      <!-- End Forms Nav -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#forms-nav2" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-journal-text"></i><span>사이트 관리</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="forms-nav2" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="/commenGroupList">
-              <i class="bi bi-circle "></i><span>코드그룹관리</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="bi bi-circle"></i><span>데이터 관리</span>
-            </a>
-          </li>
-        </ul>
-      </li>
-      <!-- End Forms Nav -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
-          <i class="bi bi-gear"></i>
-          <span>설정</span>
-        </a>
-      </li><!-- End Blank Page Nav -->
-
-    </ul>
-
-  </aside><!-- End Sidebar-->
+  <%@ include file="../../include/sidebar.jsp"%>
+  <!-- End Sidebar-->
 
   <main id="main" class="main">
 
@@ -112,7 +47,14 @@
         <div class="card-search">
           <div class="input-group input-group-sm mb-3 w-25 inputseq">
             <span class="input-group-text" id="inputGroup-sizing-sm">Seq</span>
-            <input type="text" class="form-control" id="seq" name = "seq"  value = "<c:out value="${ item.seq}"/>" readonly>
+            <c:choose>
+				<c:when test="${empty item.seq }">
+				<input type="text" id="ifcgSeq" disabled="disabled" placeholder="Auto increment">
+				</c:when>
+				<c:otherwise>
+					 <input type="text" class="form-control" id="seq" name = "seq"  readonly value="<c:out value="${item.seq }"/>" >
+				</c:otherwise>
+			</c:choose>
           </div>
           <div class="input-group input-group-sm mb-3 w-25">
             <span class="input-group-text" id="inputGroup-sizing-sm">코드 그룹 이름</span>
@@ -123,12 +65,26 @@
             <input type="text" class="form-control" id="commenGroupNameEN" name="commenGroupNameEN" value="<c:out value="${ item.commenGroupNameEN}"/>">
           </div>
          
-            <div class="btn-box d-grid gap-2 d-md-flex justify-content-md-end">
-	            <!-- <button class="btn btn-secondary" id="btnSave"  type="button">save</button> -->
+         
+         
+         
+		         <c:choose>
+					<c:when test="${empty item.seq }">
+						<button class="btn btn-secondary" id="btnSave"  type="button">Save</button>
+					</c:when>
+				<c:otherwise>
+		      	 	<button class="btn btn-secondary" id="btnUpdate"  type="button">update</button>
+					<button class="btn btn-secondary" id="btnDelete"  type="button">delete</button>
+					<button class="btn btn-danger" id="btnUpdele"  type="button">Updele</button>
+				</c:otherwise>	
+				</c:choose>
+         
+       <!--      <div class="btn-box d-grid gap-2 d-md-flex justify-content-md-end">
+	            <button class="btn btn-secondary" id="btnSave"  type="button">Save</button>
 	            <button class="btn btn-secondary" id="btnUpdate"  type="button">update</button>
 				<button class="btn btn-secondary" id="btnDelete"  type="button">delete</button>
 				<button class="btn btn-danger" id="btnUpdele"  type="button">Updele</button>
-            </div>
+            </div> -->
             
          </div>
        </div>

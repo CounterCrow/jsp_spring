@@ -49,8 +49,8 @@
             </a>
           </li>
           <li>
-            <a href="#">
-              <i class="bi bi-circle"></i><span>데이터 관리</span>
+            <a href="/commenCodeList">
+              <i class="bi bi-circle"></i><span>코드관리</span>
             </a>
           </li>
         </ul>
@@ -66,3 +66,15 @@
     </ul>
 
   </aside>
+  <!-- <script>
+  $(document).ready(function() {
+      // a 태그 클릭 이벤트 핸들러
+      $('a.nav-link').click(function(e) {
+        e.preventDefault(); // 기본 동작 중단 (페이지 이동 방지)
+        
+        $('a.nav-link').removeClass('show'); // 모든 a 태그에서 .active 클래스 제거
+        $(this).addClass('show'); // 클릭한 a 태그에 .active 클래스 추가
+
+      });
+    });
+  </script> -->

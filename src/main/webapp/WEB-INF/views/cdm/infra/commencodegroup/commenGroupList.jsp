@@ -44,7 +44,7 @@
     <div class="card">
       <div class="card-body">
         <div class="card-search">
-        <form  class="input-group input-group-sm mb-3 w-100" name="formList">
+        <form  class="input-group input-group-sm mb-3 w-100 justify-content-end" name="formList">
           <div class="input-group input-group-sm mb-3 w-25 ">
             <span class="input-group-text" id="inputGroup-sizing-sm">Seq</span>
             <input type="text" class="form-control" id="keywordSeq" name="keywordSeq" >
@@ -61,7 +61,7 @@
               <span class="input-group-text" id="inputGroup-sizing-sm">생성일</span>
               <input type="date" class="form-control"id="keywordRegDT" name="keywordRegDT">
             </div>
-            <div class="btn-box d-grid gap-2 d-md-flex justify-content-md-end">
+            <div class="btn-box d-grid gap-2 d-md-flex justify-content-md-end" >
               <button class="btn btn-secondary" id="shbtn"  type="button"><i class="bi bi-search"></i></button>
               <button class="btn btn-success" type="button"><i class="bi bi-arrow-counterclockwise"></i></button>
             </div>
@@ -109,7 +109,7 @@
  
         <!-- End Table with stripped rows -->
           <div class="btn-box d-grid gap-2 d-md-flex justify-content-md-end">
-              <button class="btn btn-secondary" id="btnAdd" type="button" onclick="location.href='commenGroupCreate'">추가</button>
+              <button class="btn btn-secondary" id="btnAdd" type="button" onclick="location.href='commenGroupForm'">추가</button>
            </div>
   </section>
  

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <!-- 전체 메퍼중에서 유일한 값을 사용하여야 한다. 해서 관계적으로 해당 파일의 패스와 파일 이름 (확장자제외)그리고 dao에서 namespace와 일치시켜야 한다. -->
+<mapper namespace="com.mycompany.app.infra.commencode.CommenCodeMapper">  
+																									<!-- select결과를 받을 계체 -->
+    <resultMap id="resultMapObj" type="com.mycompany.app.infra.commencode.CommenCode"></resultMap>
+    <sql id="code">
+    		commenCDseq
+    		, commenCDdelNY
+    		, commenCDname
+    		, commenCDnameEN
+    		, commenCDregDT
+    		, commenCDmodDT
+    		, commen_Group_seq
+    </sql>
+    <select id="selectList" resultMap="resultMapObj">
+		    	SELECT 
+	    			<include refid="code"></include>
+	    		FROM
+	    				commen_CD
+ 				WHERE 1=1
+	 				AND
+	 					commenCDdelNY = 0	
+    </select>
+    <select id="selectListsh" resultMap="resultMapObj">		
+    		SELECT 
+    			<include refid="code"></include>
+    		FROM
+    				commen_CD
+ 				WHERE 1=1
+ 					 <if test="keywordCommenCodeSeq != null and !keywordCommenCodeSeq.equals('')">
+     						   AND commenCDseq = #{keywordCommenCodeSeq}
+      				</if>
+      				<if test="keywordGroupSeq != null and !keywordGroupSeq.equals('')">
+     						   AND commen_Group_seq = #{keywordGroupSeq}
+      				</if>
+      				<if test="keywordCommenCodeName != null and !keywordCommenCodeName.equals('')">
+        						AND commenCDname LIKE CONCAT('%',#{keywordCommenCodeName},'%')
+      				</if>
+      				<if test="keywordCommenCodeNameEN != null and !keywordCommenCodeNameEN.equals('')">
+        						AND commenCDnameEN LIKE CONCAT('%',#{keywordCommenCodeNameEN},'%')
+      				</if>
+      				<if test="keywordRegDT != null and !keywordRegDT.equals('')">
+        						AND commenCDregDT LIKE CONCAT('%',#{keywordRegDT},'%')
+      				</if>
+ 				 
+ 					 <!-- commenGroupName LIKE CONCAT('%',#{Keyword},'%') -->
+ 				AND
+ 					commenCDdelNY = 0	 
+    </select>
+    <!-- ㅡㅡㅡㅡㅡㅡ 업데이트 ㅡㅡㅡㅡㅡㅡ -->
+    <update id="update">		
+    			UPDATE commen_CD
+ 				SET
+ 					commenCDname = #{commenCDname}
+ 					, commenCDNameEN = #{commenCDNameEN}
+ 					, commen_Group_seq = #{commen_Group_seq}
+ 					, commenCDmodDT = now()
+ 				WHERE				
+ 					 commenCDseq = #{commenCDseq}
+    </update>
+    <!-- ㅡㅡㅡㅡㅡㅡ 삭제ㅡㅡㅡㅡㅡㅡㅡㅡ -->
+    <delete id="delete">		
+    			DELETE 
+    			FROM 
+    					commen_CD
+ 				WHERE				
+	 					 commenCDseq = #{commenCDseq}
+	 			 				 
+    </delete>
+    <!-- ㅡㅡㅡㅡㅡㅡ 저장 ㅡㅡㅡㅡㅡㅡ -->
+    <insert id="save">
+    			INSERT
+    			INTO 	commen_CD (
+    				commen_Group_seq
+    				, commenCDname 
+    				, commenCDnameEN
+    				, commenCDregDT
+    				, commenCDdelNY
+    			) VALUES (
+    					#{commen_Group_seq},#{commenCDname}, #{commenCDnameEN},now() ,0)
+    </insert>
+    <!-- ㅡㅡㅡㅡㅡㅡ 율리트 ㅡㅡㅡㅡㅡㅡ -->
+     <update id="updele">		
+    			UPDATE commen_CD
+ 				SET
+ 					commenCDdelNY = "1"
+ 					, commenCDremDT = now()
+ 				WHERE				
+ 					 commenCDseq = #{commenCDseq}
+    </update>
+    
+    </mapper>

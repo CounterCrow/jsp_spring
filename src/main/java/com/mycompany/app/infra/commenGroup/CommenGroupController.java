@@ -69,9 +69,5 @@ public class CommenGroupController {
 	
 		return "redirect:/commenGroupList";
 	}
-	@RequestMapping(value="/commenGroupCreate") public String commenGroupCreate() {
-		  
-		  return "cdm/infra/commencodegroup/commenGroupCreate"; }
- 
-  }
- 
+	
+}

@@ -16,7 +16,7 @@
 <script src="/resources/admin/assets/js/main.js"></script>
 <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 
-<script>
+<!-- <script>
   // 현재 페이지 URL
   var currentUrl = window.location.pathname;
 
@@ -33,4 +33,4 @@
       item.classList.add('show');
     }
   });
-</script>
+</script> -->

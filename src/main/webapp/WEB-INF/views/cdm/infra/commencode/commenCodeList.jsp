@@ -30,12 +30,12 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>코드 그룹 관리</h1>
+      <h1>코드 관리</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="/index">Home</a></li>
           <li class="breadcrumb-item">사이트 관리</li>
-          <li class="breadcrumb-item active">코드그룹관리</li>
+          <li class="breadcrumb-item active">코드관리</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -47,15 +47,19 @@
         <form  class="input-group input-group-sm mb-3 w-100" name="formList">
           <div class="input-group input-group-sm mb-3 w-25 ">
             <span class="input-group-text" id="inputGroup-sizing-sm">Seq</span>
-            <input type="text" class="form-control" id="keywordSeq" name="keywordSeq" >
+            <input type="text" class="form-control" id="keywordCommenCodeSeq" name="keywordCommenCodeSeq" >
+          </div>
+          <div class="input-group input-group-sm mb-3 w-25 ">
+            <span class="input-group-text" id="inputGroup-sizing-sm">GroupSeq</span>
+            <input type="text" class="form-control" id="keywordGroupSeq" name="keywordGroupSeq" >
           </div>
 	          <div class="input-group input-group-sm mb-3 w-25">
 	            <span class="input-group-text" id="inputGroup-sizing-sm">Name</span>
-	            <input type="text" class="form-control" id="keywordCommenGroupName" name="keywordCommenGroupName" >
+	            <input type="text" class="form-control" id="keywordCommenCodeName" name="keywordCommenCodeName" >
 	          </div>
           <div class="input-group input-group-sm mb-3 w-25">
             <span class="input-group-text" id="inputGroup-sizing-sm">Name(EN)</span>
-            <input type="text" class="form-control"id="keywordCommenGroupNameEN" name="keywordCommenGroupNameEN" >
+            <input type="text" class="form-control"id="keywordCommenCodeNameEN" name="keywordCommenCodeNameEN" >
           </div>
             <div class="input-group input-group-sm mb-3 w-25">
               <span class="input-group-text" id="inputGroup-sizing-sm">생성일</span>
@@ -76,6 +80,7 @@
             <tr>
               <th scope="col">#</th>
               <th scope="col">Seq</th>
+              <th scope="col">CodeGroup</th>
               <th scope="col">Name</th>
               <!-- <th scope="col">delNY</th> -->
               <th scope="col">Name(EN)</th>
@@ -94,12 +99,12 @@
 					<c:forEach items="${list}" var="list" varStatus="status">
 					<tr>
 						<td><c:out value="${status.index + 1}"></c:out></td>
-						<td><c:out value="${list.seq }"></c:out></td>
-						<td><a href="/commenGroupForm?seq=<c:out value="${list.seq}"></c:out>"><c:out value="${list.commenGroupName }"></c:out></a></td>
-						<%-- <td><c:out value="${list.delNY}"></c:out></td> --%>
-						<td><a href="/commenGroupForm?seq=<c:out value="${list.seq}"></c:out>"><c:out value="${list.commenGroupNameEN }"></c:out></a></td>
-						<td><a href="/commenGroupForm?seq=<c:out value="${list.seq}"></c:out>"><fmt:formatDate value="${list.regDateTime}" pattern="yyyy-MM-dd HH:mm:ss" /></a></td>
-						<td><a href="/commenGroupForm?seq=<c:out value="${list.seq}"></c:out>"><fmt:formatDate value="${list.modDateTime}" pattern="yyyy-MM-dd HH:mm:ss" /></a></td>
+						<td><c:out value="${list.commenCDseq }"></c:out></td>
+						<td><a href="/commenCodeForm?seq=<c:out value="${list.commenCDseq}"></c:out>"><c:out value="${list.commenCDName }"></c:out></a></td>
+						<%-- <td><c:out value="${list.commenCDdelNY}"></c:out></td> --%>
+						<td><a href="/commenCodeForm?seq=<c:out value="${list.commenCDseq}"></c:out>"><c:out value="${list.commenCDNameEN }"></c:out></a></td>
+						<td><a href="/commenCodeForm?seq=<c:out value="${list.commenCDseq}"></c:out>"><fmt:formatDate value="${list.commenCDregDT}" pattern="yyyy-MM-dd HH:mm:ss" /></a></td>
+						<td><a href="/commenCodeForm?seq=<c:out value="${list.commenCDseq}"></c:out>"><fmt:formatDate value="${list.commenCDmodDT}" pattern="yyyy-MM-dd HH:mm:ss" /></a></td>
 					</tr>
 					</c:forEach>
 				</c:otherwise>
@@ -109,7 +114,7 @@
  
         <!-- End Table with stripped rows -->
           <div class="btn-box d-grid gap-2 d-md-flex justify-content-md-end">
-              <button class="btn btn-secondary" id="btnAdd" type="button" onclick="location.href='commenGroupCreate'">추가</button>
+              <button class="btn btn-secondary" id="btnAdd" type="button" onclick="location.href='commenCodeForm'">추가</button>
            </div>
   </section>
   </main>
@@ -125,7 +130,7 @@
 	
  		// 자기 자신을 다시 한 번 호출해준다.
 			$("form[name=formList]").attr("method", "post");
-			$("form[name=formList]").attr("action", "/commenGroupList").submit();
+			$("form[name=formList]").attr("action", "/commenCodeList").submit();
  		 
  		 
   	}

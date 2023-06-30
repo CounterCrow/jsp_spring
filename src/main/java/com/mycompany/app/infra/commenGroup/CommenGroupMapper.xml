@@ -79,13 +79,12 @@
     <insert id="save">
     			INSERT
     			INTO 	commen_Group (
-    				seq, 
     				commenGroupName, 
     				commenGroupNameEN ,
     				regDateTime ,
     				delNY
     			) VALUES (
-    					#{seq},#{commenGroupName}, #{commenGroupNameEN},now() ,0)
+    					#{commenGroupName}, #{commenGroupNameEN},now() ,0)
     </insert>
     <!-- ㅡㅡㅡㅡㅡㅡ 율리트 ㅡㅡㅡㅡㅡㅡ -->
      <update id="updele">		
