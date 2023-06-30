@@ -12,9 +12,9 @@ public class CommenGroupServiceImpl implements CommenGroupService{
 	CommenGroupDao dao;
 	
 	@Override
-	public List<CommenGroup> selectList(Model model) {
+	public List<CommenGroup> selectListsh(CommenGroupVo vo) {
 		// TODO Auto-generated method stub
-		return dao.selectList();
+		return dao.selectListsh(vo);
 	}
 
 	@Override
@@ -46,6 +46,12 @@ public class CommenGroupServiceImpl implements CommenGroupService{
 	public int updele(CommenGroup dto) {
 		
 		return dao.updele(dto);
+	}
+
+	@Override
+	public List<CommenGroup> selectList(Model model) {
+		// TODO Auto-generated method stub
+		return dao.selectList();
 	}
 
 		

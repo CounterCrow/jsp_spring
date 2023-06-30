@@ -1264,3 +1264,6 @@ fieldset .inputseq{
   max-width: 150px;
 }
 /* 정렬css */
+#btnAdd{
+	flex:end;
+}

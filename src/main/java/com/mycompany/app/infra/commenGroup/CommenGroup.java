@@ -1,6 +1,8 @@
 package com.mycompany.app.infra.commenGroup;
 
-import javax.print.attribute.standard.DateTimeAtCompleted;
+import java.sql.Timestamp;
+
+
 
 public class CommenGroup {
 
@@ -10,17 +12,14 @@ public class CommenGroup {
 	
 	private String seq;
 	private String commenGroupName;
-	private String delNY;
-	private String commenGroupNameEng;
-	private String commenGroupOrder;
-	private Integer regSeq;
+	private String commenGroupNameEN;
 	private String regIp;
-	private DateTimeAtCompleted regDateTime;
-	private Integer modSeq;
+	private Timestamp regDateTime;
 	private String modIp;
-	private DateTimeAtCompleted modDateTime;
+	private Timestamp modDateTime;
 	private String remIp;
-	private DateTimeAtCompleted remDateTime;
+	private Timestamp remDateTime;
+	private String delNY;
 //	----
 	public String getSeq() {
 		return seq;
@@ -41,23 +40,11 @@ public class CommenGroup {
 	public void setDelNY(String delNY) {
 		this.delNY = delNY;
 	}
-	public String getCommenGroupNameEng() {
-		return commenGroupNameEng;
+	public String getCommenGroupNameEN() {
+		return commenGroupNameEN;
 	}
-	public void setCommenGroupNameEng(String commenGroupNameEng) {
-		this.commenGroupNameEng = commenGroupNameEng;
-	}
-	public String getCommenGroupOrder() {
-		return commenGroupOrder;
-	}
-	public void setCommenGroupOrder(String commenGroupOrder) {
-		this.commenGroupOrder = commenGroupOrder;
-	}
-	public Integer getRegSeq() {
-		return regSeq;
-	}
-	public void setRegSeq(Integer regSeq) {
-		this.regSeq = regSeq;
+	public void setCommenGroupNameEN(String commenGroupNameEN) {
+		this.commenGroupNameEN = commenGroupNameEN;
 	}
 	public String getRegIp() {
 		return regIp;
@@ -65,17 +52,11 @@ public class CommenGroup {
 	public void setRegIp(String regIp) {
 		this.regIp = regIp;
 	}
-	public DateTimeAtCompleted getRegDateTime() {
+	public Timestamp getRegDateTime() {
 		return regDateTime;
 	}
-	public void setRegDateTime(DateTimeAtCompleted regDateTime) {
+	public void setRegDateTime(Timestamp regDateTime) {
 		this.regDateTime = regDateTime;
-	}
-	public Integer getModSeq() {
-		return modSeq;
-	}
-	public void setModSeq(Integer modSeq) {
-		this.modSeq = modSeq;
 	}
 	public String getModIp() {
 		return modIp;
@@ -83,10 +64,10 @@ public class CommenGroup {
 	public void setModIp(String modIp) {
 		this.modIp = modIp;
 	}
-	public DateTimeAtCompleted getModDateTime() {
+	public Timestamp getModDateTime() {
 		return modDateTime;
 	}
-	public void setModDateTime(DateTimeAtCompleted modDateTime) {
+	public void setModDateTime(Timestamp modDateTime) {
 		this.modDateTime = modDateTime;
 	}
 	public String getRemIp() {
@@ -95,10 +76,10 @@ public class CommenGroup {
 	public void setRemIp(String remIp) {
 		this.remIp = remIp;
 	}
-	public DateTimeAtCompleted getRemDateTime() {
+	public Timestamp getRemDateTime() {
 		return remDateTime;
 	}
-	public void setRemDateTime(DateTimeAtCompleted remDateTime) {
+	public void setRemDateTime(Timestamp remDateTime) {
 		this.remDateTime = remDateTime;
 	}
 	

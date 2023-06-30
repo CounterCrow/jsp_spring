@@ -12,14 +12,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class CommenGroupController {
 
+	//Model model 디비에 데이터를 뿌릴 때 사용한다.
+	
 	@Autowired
 	CommenGroupServiceImpl service;
+//	@RequestMapping("/commenGroupList")
+//	public String commenGroupList(Model model) {
+//		
+//		List<CommenGroup> list = service.selectList( model);
+//		model.addAttribute("list",list);
+//		
+//		return "cdm/infra/commencodegroup/commenGroupList";
+//	}
 	
 	@RequestMapping("/commenGroupList")
-	public String commenGroupList(Model model) {
+	public String commenGroupListsh(CommenGroupVo vo,Model model) {
 		
-		List<CommenGroup> list = service.selectList(model);
-		model.addAttribute("list",list);
+		List<CommenGroup> listsh = service.selectListsh(vo);
+		model.addAttribute("list",listsh);
 		
 		return "cdm/infra/commencodegroup/commenGroupList";
 	}

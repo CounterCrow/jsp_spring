@@ -8,16 +8,42 @@
     <resultMap id="resultMapObj" type="com.mycompany.app.infra.commenGroup.CommenGroup"></resultMap>
     <sql id="group">
 		seq
-		, commenGroupName  
+		, commenGroupName 
+		, commenGroupNameEN
+		, regDateTime
+		, modDateTime
+		, remDateTime 
     </sql>
-    
     <select id="selectList" resultMap="resultMapObj">		
     		SELECT 
     			<include refid="group"></include>
     		FROM
     				commen_Group
- 				WHERE 
- 					 commenGroupName LIKE CONCAT('%',#{Keyword},'%')
+ 				WHERE 1=1
+ 				AND
+ 					delNY = 0	 
+    </select>
+    
+    <select id="selectListsh" resultMap="resultMapObj">		
+    		SELECT 
+    			<include refid="group"></include>
+    		FROM
+    				commen_Group
+ 				WHERE 1=1
+ 					 <if test="keywordSeq != null and !keywordSeq.equals('')">
+     						   AND seq = #{keywordSeq}
+      				</if>
+      				<if test="keywordCommenGroupName != null and !keywordCommenGroupName.equals('')">
+        						AND commenGroupName LIKE CONCAT('%',#{keywordCommenGroupName},'%')
+      				</if>
+      				<if test="keywordCommenGroupNameEN != null and !keywordCommenGroupNameEN.equals('')">
+        						AND commenGroupNameEN LIKE CONCAT('%',#{keywordCommenGroupNameEN},'%')
+      				</if>
+      				<if test="keywordRegDT != null and !keywordRegDT.equals('')">
+        						AND regDateTime LIKE CONCAT('%',#{keywordRegDT},'%')
+      				</if>
+ 				 
+ 					 <!-- commenGroupName LIKE CONCAT('%',#{Keyword},'%') -->
  				AND
  					delNY = 0	 
     </select>
@@ -27,35 +53,46 @@
     		FROM
     				commen_Group
  				WHERE 1=1
- 					AND
- 					 seq = #{seq}
+ 					AND  seq = #{seq}
     </select>
+    <!-- ㅡㅡㅡㅡㅡㅡ 업데이트 ㅡㅡㅡㅡㅡㅡ -->
     <update id="update">		
     			UPDATE commen_Group
  				SET
  					commenGroupName = #{commenGroupName}
- 					, delNY = 0
+ 					, commenGroupNameEN = #{commenGroupNameEN}
+ 					, modDateTime = now()
  				WHERE				
  					 seq = #{seq}
     </update>
+    
+    <!-- ㅡㅡㅡㅡㅡㅡ 삭제ㅡㅡㅡㅡㅡㅡㅡㅡ -->
     <delete id="delete">		
     			DELETE 
     			FROM 
     					commen_Group
  				WHERE				
 	 					 seq = #{seq}
+	 			 				 
     </delete>
+    <!-- ㅡㅡㅡㅡㅡㅡ 저장 ㅡㅡㅡㅡㅡㅡ -->
     <insert id="save">
     			INSERT
-    			INTO 	commen_Group
-    					(seq, commenGroupName, delNY)
-				VALUES
-    					(#{seq},#{commenGroupName},0)
+    			INTO 	commen_Group (
+    				seq, 
+    				commenGroupName, 
+    				commenGroupNameEN ,
+    				regDateTime ,
+    				delNY
+    			) VALUES (
+    					#{seq},#{commenGroupName}, #{commenGroupNameEN},now() ,0)
     </insert>
+    <!-- ㅡㅡㅡㅡㅡㅡ 율리트 ㅡㅡㅡㅡㅡㅡ -->
      <update id="updele">		
     			UPDATE commen_Group
  				SET
  					delNY = "1"
+ 					, remDateTime = now()
  				WHERE				
  					 seq = #{seq}
     </update>
