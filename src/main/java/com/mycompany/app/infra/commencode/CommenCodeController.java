@@ -15,9 +15,9 @@ public class CommenCodeController {
 	  @Autowired CommenCodeServiceImpl service;
 	  
 		
-		  @RequestMapping(value="") public String selectList() {
+	  @RequestMapping(value="") public String selectList() {
 		  
-		  return null; }
+	  return null; }
 		 
 		 
 	  @RequestMapping(value="/commenCodeList")
