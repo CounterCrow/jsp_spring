@@ -1,6 +1,6 @@
 package com.mycompany.app.infra.base;
 
-public class pagenation {
+public class Pagenation {
 
 	
 //	paging

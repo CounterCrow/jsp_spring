@@ -2,9 +2,9 @@ package com.mycompany.app.infra.commencode;
 
 import java.sql.Timestamp;
 
-import com.mycompany.app.infra.base.pagenation;
+import com.mycompany.app.infra.base.Pagenation;
 
-public class CommenCodeVo extends pagenation{
+public class CommenCodeVo extends Pagenation{
 	
 	private String commenCDseq;
 	
