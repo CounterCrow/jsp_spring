@@ -16,6 +16,9 @@ public class BaseVo {
 	private int startPage;										// 시작 페이지 번호
 	private int endPage;										// 마지막 페이지 번호
 
+	
+	
+	//paging GStter
 	public int getThisPage() {
 		return thisPage;
 	}
