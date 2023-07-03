@@ -30,7 +30,7 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>코드 수정</h1>
+      <h1>코드 그룹 수정</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="#">Home</a></li>

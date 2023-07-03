@@ -15,7 +15,8 @@ public class CommenCodeDao {
 	@Resource(name="sqlSession")
 	private SqlSession  sqlSession;
 	
-	private static String namespace = "com.mycompany.app.infra.commenCode.CommenCodeMapper";
+	
+	private static String namespace = "com.mycompany.app.infra.commencode.CommenCodeMapper";
 	public List<CommenCode> selectList(){return sqlSession.selectList(namespace+".selectList","");}
 	public List<CommenCode> selectListsh(CommenCodeVo vo){return sqlSession.selectList(namespace+".selectListsh",vo);}
 	public CommenCode selectOne(CommenCodeVo vo){ return sqlSession.selectOne(namespace + ".selectOne", vo ); }

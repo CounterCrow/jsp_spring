@@ -47,23 +47,23 @@
         <form  class="input-group input-group-sm mb-3 w-100" name="formList">
           <div class="input-group input-group-sm mb-3 w-25 ">
             <span class="input-group-text" id="inputGroup-sizing-sm">Seq</span>
-            <input type="text" class="form-control" id="keywordCommenCodeSeq" name="keywordCommenCodeSeq" >
+            <input type="text" class="form-control" id="shCommenCDseq" name="shCommenCDseq" >
           </div>
           <div class="input-group input-group-sm mb-3 w-25 ">
             <span class="input-group-text" id="inputGroup-sizing-sm">GroupSeq</span>
-            <input type="text" class="form-control" id="keywordGroupSeq" name="keywordGroupSeq" >
+            <input type="text" class="form-control" id="shGroupSeq" name="shGroupSeq" >
           </div>
 	          <div class="input-group input-group-sm mb-3 w-25">
 	            <span class="input-group-text" id="inputGroup-sizing-sm">Name</span>
-	            <input type="text" class="form-control" id="keywordCommenCodeName" name="keywordCommenCodeName" >
+	            <input type="text" class="form-control" id="shCommenCDname" name="shCommenCDname" >
 	          </div>
           <div class="input-group input-group-sm mb-3 w-25">
             <span class="input-group-text" id="inputGroup-sizing-sm">Name(EN)</span>
-            <input type="text" class="form-control"id="keywordCommenCodeNameEN" name="keywordCommenCodeNameEN" >
+            <input type="text" class="form-control"id="shCommenCDnameEN" name="shCommenCDnameEN" >
           </div>
             <div class="input-group input-group-sm mb-3 w-25">
               <span class="input-group-text" id="inputGroup-sizing-sm">생성일</span>
-              <input type="date" class="form-control"id="keywordRegDT" name="keywordRegDT">
+              <input type="date" class="form-control"id="shCommenCDregDT" name="shCommenCDregDT">
             </div>
             <div class="btn-box d-grid gap-2 d-md-flex justify-content-md-end">
               <button class="btn btn-secondary" id="shbtn"  type="button"><i class="bi bi-search"></i></button>
@@ -100,18 +100,28 @@
 					<tr>
 						<td><c:out value="${status.index + 1}"></c:out></td>
 						<td><c:out value="${list.commenCDseq }"></c:out></td>
-						<td><a href="/commenCodeForm?seq=<c:out value="${list.commenCDseq}"></c:out>"><c:out value="${list.commenCDName }"></c:out></a></td>
+						<td><a href="/commenCodeForm?commenCDseq=<c:out value="${list.commenCDseq}"></c:out>"><c:out value="${list.commen_Group_seq }"></c:out></a></td>
+						<td><a href="/commenCodeForm?commenCDseq=<c:out value="${list.commenCDseq}"></c:out>"><c:out value="${list.commenCDName }"></c:out></a></td>
 						<%-- <td><c:out value="${list.commenCDdelNY}"></c:out></td> --%>
-						<td><a href="/commenCodeForm?seq=<c:out value="${list.commenCDseq}"></c:out>"><c:out value="${list.commenCDNameEN }"></c:out></a></td>
-						<td><a href="/commenCodeForm?seq=<c:out value="${list.commenCDseq}"></c:out>"><fmt:formatDate value="${list.commenCDregDT}" pattern="yyyy-MM-dd HH:mm:ss" /></a></td>
-						<td><a href="/commenCodeForm?seq=<c:out value="${list.commenCDseq}"></c:out>"><fmt:formatDate value="${list.commenCDmodDT}" pattern="yyyy-MM-dd HH:mm:ss" /></a></td>
+						<td><a href="/commenCodeForm?commenCDseq=<c:out value="${list.commenCDseq}"></c:out>"><c:out value="${list.commenCDNameEN }"></c:out></a></td>
+						<td><a href="/commenCodeForm?commenCDseq=<c:out value="${list.commenCDseq}"></c:out>"><fmt:formatDate value="${list.commenCDregDT}" pattern="yyyy-MM-dd HH:mm:ss" /></a></td>
+						<td><a href="/commenCodeForm?commenCDseq=<c:out value="${list.commenCDseq}"></c:out>"><fmt:formatDate value="${list.commenCDmodDT}" pattern="yyyy-MM-dd HH:mm:ss" /></a></td>
 					</tr>
 					</c:forEach>
 				</c:otherwise>
 		</c:choose>	
           </tbody>
         </table>
- 
+ 		
+ 		<jsp:include page="../../include/pagination.jsp">
+        <jsp:param value="${paging.page}" name="page"/>
+        <jsp:param value="${paging.beginPage}" name="begin"/>
+        <jsp:param value="${paging.endPage}" name="end"/>
+        <jsp:param value="${paging.prev}" name="prev"/>
+        <jsp:param value="${paging.next}" name="next"/>
+		</jsp:include>
+ 		
+ 		
         <!-- End Table with stripped rows -->
           <div class="btn-box d-grid gap-2 d-md-flex justify-content-md-end">
               <button class="btn btn-secondary" id="btnAdd" type="button" onclick="location.href='commenCodeForm'">추가</button>

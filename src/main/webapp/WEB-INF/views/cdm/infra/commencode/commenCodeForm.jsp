@@ -41,28 +41,32 @@
     </div><!-- End Page Title -->
 
   <section>
-   <form name="form" method="post" action="/com.mycompany.app.infra.commenGroup.CommenGroupController">
+   <form name="form" method="post" action="/com.mycompany.app.infra.commencode.CommenCodeController">
     <div class="card">
       <div class="card-body">
         <div class="card-search">
           <div class="input-group input-group-sm mb-3 w-25 inputseq">
             <span class="input-group-text" id="inputGroup-sizing-sm">Seq</span>
             <c:choose>
-				<c:when test="${empty item.commenCDseq }">
+				<c:when test="${empty item.commenCDseq}">
 				<input type="text" id="commenCDseq" disabled="disabled" placeholder="Auto increment">
 				</c:when>
 				<c:otherwise>
-					 <input type="text" class="form-control" id="commenCDseq" name = "commenCDseq"  readonly value="<c:out value="${item.commenCDseq }"/>" >
+					 <input type="text" class="form-control" id="commenCDseq" name = "shCommenCDseq"  readonly value="<c:out value="${item.commenCDseq}"/>" >
 				</c:otherwise>
 			</c:choose>
           </div>
           <div class="input-group input-group-sm mb-3 w-25">
-            <span class="input-group-text" id="inputGroup-sizing-sm">코드 그룹 이름</span>
-            <input type="text" class="form-control" id="commenGroupName" name="commenGroupName" value="<c:out value="${ item.commenCDName}"/>">
+            <span class="input-group-text" id="inputGroup-sizing-sm">코드 그룹seq</span>
+            <input type="text" class="form-control" id="commen_Group_seq" name=shGroupSeq value="<c:out value="${ item.commen_Group_seq}"/>">
           </div>
           <div class="input-group input-group-sm mb-3 w-25">
-            <span class="input-group-text" id="inputGroup-sizing-sm">코드 그룹 이름(EN)</span>
-            <input type="text" class="form-control" id="commenGroupNameEN" name="commenGroupNameEN" value="<c:out value="${ item.commenCDNameEN}"/>">
+            <span class="input-group-text" id="inputGroup-sizing-sm">코드 이름</span>
+            <input type="text" class="form-control" id="commenCDName" name="shCommenCDname" value="<c:out value="${ item.commenCDName}"/>">
+          </div>
+          <div class="input-group input-group-sm mb-3 w-25">
+            <span class="input-group-text" id="inputGroup-sizing-sm">코드 이름(EN)</span>
+            <input type="text" class="form-control" id="commenCDNameEN" name="shCommenCDnameEN" value="<c:out value="${ item.commenCDNameEN}"/>">
           </div>
          
          

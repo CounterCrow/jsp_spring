@@ -2,18 +2,41 @@ package com.mycompany.app.infra.commencode;
 
 import java.sql.Timestamp;
 
-public class CommenCodeVo {
+import com.mycompany.app.infra.base.BaseVo;
 
+public class CommenCodeVo extends BaseVo{
+	
+	private String commenCDseq;
+	
+	private String commenCDName;
+	private String commenCDNameEN;
 	private String shGroupSeq;
 	private String shCommenCDseq;
 	private String shCommenCDname;
 	private String shCommenCDnameEN;
-	private Timestamp shCommenCDregDT;
+	private String shCommenCDregDT;
 	private Timestamp shCommenCDmodDT;
 	
 	// --------------------------------------------
 	
-	
+	public String getCommenCDseq() {
+		return commenCDseq;
+	}
+	public void setCommenCDseq(String commenCDseq) {
+		this.commenCDseq = commenCDseq;
+	}
+	public String getCommenCDName() {
+		return commenCDName;
+	}
+	public void setCommenCDName(String commenCDName) {
+		this.commenCDName = commenCDName;
+	}
+	public String getCommenCDNameEN() {
+		return commenCDNameEN;
+	}
+	public void setCommenCDNameEN(String commenCDNameEN) {
+		this.commenCDNameEN = commenCDNameEN;
+	}
 	public String getShGroupSeq() {
 		return shGroupSeq;
 	}
@@ -38,10 +61,10 @@ public class CommenCodeVo {
 	public void setShCommenCDnameEN(String shCommenCDnameEN) {
 		this.shCommenCDnameEN = shCommenCDnameEN;
 	}
-	public Timestamp getShCommenCDregDT() {
+	public String getShCommenCDregDT() {
 		return shCommenCDregDT;
 	}
-	public void setShCommenCDregDT(Timestamp shCommenCDregDT) {
+	public void setShCommenCDregDT(String shCommenCDregDT) {
 		this.shCommenCDregDT = shCommenCDregDT;
 	}
 	public Timestamp getShCommenCDmodDT() {
@@ -50,6 +73,8 @@ public class CommenCodeVo {
 	public void setShCommenCDmodDT(Timestamp shCommenCDmodDT) {
 		this.shCommenCDmodDT = shCommenCDmodDT;
 	}
+	
+
 	
 	
 }

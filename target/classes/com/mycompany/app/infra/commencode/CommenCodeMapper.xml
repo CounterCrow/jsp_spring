@@ -5,7 +5,7 @@
     <!-- 전체 메퍼중에서 유일한 값을 사용하여야 한다. 해서 관계적으로 해당 파일의 패스와 파일 이름 (확장자제외)그리고 dao에서 namespace와 일치시켜야 한다. -->
 <mapper namespace="com.mycompany.app.infra.commencode.CommenCodeMapper">  
 																									<!-- select결과를 받을 계체 -->
-    <resultMap id="resultMapObj" type="com.mycompany.app.infra.commencode.CommenCode"></resultMap>
+    <resultMap id="resultMapObj2" type="com.mycompany.app.infra.commencode.CommenCode"></resultMap>
     <sql id="code">
     		commenCDseq
     		, commenCDdelNY
@@ -15,7 +15,7 @@
     		, commenCDmodDT
     		, commen_Group_seq
     </sql>
-    <select id="selectList" resultMap="resultMapObj">
+    <select id="selectList" resultMap="resultMapObj2">
 		    	SELECT 
 	    			<include refid="code"></include>
 	    		FROM
@@ -24,37 +24,46 @@
 	 				AND
 	 					commenCDdelNY = 0	
     </select>
-    <select id="selectListsh" resultMap="resultMapObj">		
+    <select id="selectListsh" resultMap="resultMapObj2">		
     		SELECT 
     			<include refid="code"></include>
     		FROM
     				commen_CD
  				WHERE 1=1
- 					 <if test="keywordCommenCodeSeq != null and !keywordCommenCodeSeq.equals('')">
-     						   AND commenCDseq = #{keywordCommenCodeSeq}
+ 					 <if test="shCommenCDseq != null and !shCommenCDseq.equals('')">
+     						   AND commenCDseq = #{shCommenCDseq}
       				</if>
-      				<if test="keywordGroupSeq != null and !keywordGroupSeq.equals('')">
-     						   AND commen_Group_seq = #{keywordGroupSeq}
+      				<if test="shGroupSeq != null and !shGroupSeq.equals('')">
+        						AND commen_Group_seq LIKE CONCAT('%',#{shGroupSeq},'%')
       				</if>
-      				<if test="keywordCommenCodeName != null and !keywordCommenCodeName.equals('')">
-        						AND commenCDname LIKE CONCAT('%',#{keywordCommenCodeName},'%')
+      				<if test="shCommenCDname != null and !shCommenCDname.equals('')">
+        						AND commenCDname LIKE CONCAT('%',#{shCommenCDname},'%')
       				</if>
-      				<if test="keywordCommenCodeNameEN != null and !keywordCommenCodeNameEN.equals('')">
-        						AND commenCDnameEN LIKE CONCAT('%',#{keywordCommenCodeNameEN},'%')
+      				<if test="shCommenCDnameEN != null and !shCommenCDnameEN.equals('')">
+        						AND commenCDnameEN LIKE CONCAT('%',#{shCommenCDnameEN},'%')
       				</if>
-      				<if test="keywordRegDT != null and !keywordRegDT.equals('')">
-        						AND commenCDregDT LIKE CONCAT('%',#{keywordRegDT},'%')
+      				<if test="shCommenCDregDT != null and !shCommenCDregDT.equals('')">
+        						AND commenCDregDT LIKE CONCAT('%',#{shCommenCDregDT},'%')
       				</if>
  				 
  					 <!-- commenGroupName LIKE CONCAT('%',#{Keyword},'%') -->
  				AND
  					commenCDdelNY = 0	 
     </select>
+    
+     <select id="selectOne" resultMap="resultMapObj2">		
+    		SELECT 
+    			<include refid="code"></include>
+    		FROM
+    				commen_CD
+ 				WHERE 1=1
+ 					AND  commenCDseq = #{commenCDseq}
+    </select>
     <!-- ㅡㅡㅡㅡㅡㅡ 업데이트 ㅡㅡㅡㅡㅡㅡ -->
     <update id="update">		
     			UPDATE commen_CD
  				SET
- 					commenCDname = #{commenCDname}
+ 					commenCDname = #{commenCDName}
  					, commenCDNameEN = #{commenCDNameEN}
  					, commen_Group_seq = #{commen_Group_seq}
  					, commenCDmodDT = now()
@@ -80,7 +89,7 @@
     				, commenCDregDT
     				, commenCDdelNY
     			) VALUES (
-    					#{commen_Group_seq},#{commenCDname}, #{commenCDnameEN},now() ,0)
+    					#{commen_Group_seq},#{commenCDName}, #{commenCDNameEN},now() ,0)
     </insert>
     <!-- ㅡㅡㅡㅡㅡㅡ 율리트 ㅡㅡㅡㅡㅡㅡ -->
      <update id="updele">		

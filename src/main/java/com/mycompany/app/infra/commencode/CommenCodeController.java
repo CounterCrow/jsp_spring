@@ -14,11 +14,11 @@ public class CommenCodeController {
 	
 	  @Autowired CommenCodeServiceImpl service;
 	  
-		/*
-		 * @RequestMapping(value="") public String selectList() {
-		 * 
-		 * return null; }
-		 */
+		
+		  @RequestMapping(value="") public String selectList() {
+		  
+		  return null; }
+		 
 		 
 	  @RequestMapping(value="/commenCodeList")
 	  public String selectListsh(CommenCodeVo vo ,Model model) {
