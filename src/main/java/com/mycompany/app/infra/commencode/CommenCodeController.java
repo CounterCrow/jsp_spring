@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
@@ -22,11 +21,8 @@ public class CommenCodeController {
 		 
 		 
 	  @RequestMapping(value="/commenCodeList")
-	  public String selectListsh(@ModelAttribute("vo") CommenCodeVo vo ,Model model) {
-		  int totalCnt = service.selectOneCount(vo);
-			vo.setParamsPaging(totalCnt);
+	  public String selectListsh(CommenCodeVo vo ,Model model) {
 		  List<CommenCode> listsh = service.selectListsh(vo);
-		  
 		  model.addAttribute("list",listsh);
 		  return  "cdm/infra/commencode/commenCodeList";
 	}
