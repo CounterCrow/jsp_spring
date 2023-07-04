@@ -108,7 +108,7 @@
               <h3>Project : A-1</h3>
               <img src="/resources/portfolio/assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="/resources/portfolio/assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1">user</a>
+                <a href="user">user</a>
                 <a href="portfolioLoginAdmin">admin</a>
               </div>
             </div>
@@ -120,7 +120,7 @@
               <h3>Project : B-1</h3>
               <img src="/resources/portfolio/assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="/resources/portfolio/assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3">user</a>
+                <a href="views/user/login.jsp">user</a>
                 <a href="portfolio-details.html" title="More Details">admin</a>
               </div>
             </div>
