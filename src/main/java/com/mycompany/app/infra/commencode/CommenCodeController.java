@@ -15,9 +15,11 @@ public class CommenCodeController {
 	  @Autowired CommenCodeServiceImpl service;
 	  
 		
-	  @RequestMapping(value="") public String selectList() {
-		  
-	  return null; }
+		/*
+		 * @RequestMapping(value="") public String selectList() {
+		 * 
+		 * return null; }
+		 */
 		 
 		 
 	  @RequestMapping(value="/commenCodeList")
@@ -26,7 +28,7 @@ public class CommenCodeController {
 		  model.addAttribute("list",listsh);
 		  return  "cdm/infra/commencode/commenCodeList";
 	}
-	  @RequestMapping("/commenCodeForm")
+	  @RequestMapping(value="/commenCodeForm")
 		public String selectOne(CommenCodeVo vo,Model model) {
 			
 			CommenCode item = service.selectOne(vo);
