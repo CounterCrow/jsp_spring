@@ -108,7 +108,7 @@
               <h3>Project : A-1</h3>
               <img src="/resources/portfolio/assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="user">user</a>
+                <a href="projact1">user</a>
                 <a href="portfolioLoginAdmin">admin</a>
               </div>
             </div>
@@ -120,8 +120,8 @@
               <h3>Project : B-1</h3>
               <img src="/resources/portfolio/assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="views/user/login.jsp">user</a>
-                <a href="portfolio-details.html" title="More Details">admin</a>
+                <a href="userLogin">user</a>
+                <a href="portfolio-details.html">admin</a>
               </div>
             </div>
             <p>꾸어어어어어어엉 곰이 울었다</p>

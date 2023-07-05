@@ -14,7 +14,8 @@ public class CommenCodeServiceImpl implements CommenCodeService{
 	
 	  @Override public List<CommenCode> selectList(Model model) {
 	  
-	  return dao.selectList(); }
+	  return dao.selectList(); 
+	  }
 	 
 	@Override
 	public List<CommenCode> selectListsh(CommenCodeVo vo) {

@@ -64,20 +64,16 @@
             <span class="input-group-text" id="inputGroup-sizing-sm">코드 그룹 이름(EN)</span>
             <input type="text" class="form-control" id="commenGroupNameEN" name="commenGroupNameEN" value="<c:out value="${ item.commenGroupNameEN}"/>">
           </div>
-         
-         
-         
-         
-		         <c:choose>
-					<c:when test="${empty item.seq }">
-						<button class="btn btn-secondary" id="btnSave"  type="button">Save</button>
-					</c:when>
-				<c:otherwise>
-		      	 	<button class="btn btn-secondary" id="btnUpdate"  type="button">update</button>
-					<button class="btn btn-secondary" id="btnDelete"  type="button">delete</button>
-					<button class="btn btn-danger" id="btnUpdele"  type="button">Updele</button>
-				</c:otherwise>	
-				</c:choose>
+	         <c:choose>
+				<c:when test="${empty item.seq }">
+					<button class="btn btn-secondary" id="btnSave"  type="button">Save</button>
+				</c:when>
+			<c:otherwise>
+	      	 	<button class="btn btn-secondary" id="btnUpdate"  type="button">update</button>
+				<button class="btn btn-secondary" id="btnDelete"  type="button">delete</button>
+				<button class="btn btn-danger" id="btnUpdele"  type="button">Updele</button>
+			</c:otherwise>	
+			</c:choose>
          
        <!--      <div class="btn-box d-grid gap-2 d-md-flex justify-content-md-end">
 	            <button class="btn btn-secondary" id="btnSave"  type="button">Save</button>

@@ -14,20 +14,8 @@
 		, modDateTime
 		, remDateTime 
     </sql>
-    <select id="selectList" resultMap="resultMapObj">		
-    		SELECT 
-    			<include refid="group"></include>
-    		FROM
-    				commen_Group
- 				WHERE 1=1
- 				AND
- 					delNY = 0	 
-    </select>
-    
-    <select id="selectListsh" resultMap="resultMapObj">		
-    		SELECT 
-    			<include refid="group"></include>
-    		FROM
+     <sql id ="selectCommon">
+   				FROM
     				commen_Group
  				WHERE 1=1
  					 <if test="keywordSeq != null and !keywordSeq.equals('')">
@@ -44,8 +32,24 @@
       				</if>
  				 
  					 <!-- commenGroupName LIKE CONCAT('%',#{Keyword},'%') -->
+     </sql>
+    <select id="selectList" resultMap="resultMapObj">		
+    		SELECT 
+    			<include refid="group"></include>
+    		FROM
+    				commen_Group
+ 				WHERE 1=1
  				AND
  					delNY = 0	 
+    </select>
+    
+    <select id="selectListsh" resultMap="resultMapObj">		
+    		SELECT 
+    			<include refid="group"></include>
+    			<include refid="selectCommon"></include>
+    			AND
+ 					delNY = 0	
+ 				LIMIT #{rowNumToShow} OFFSET #{startRnumForMysql}		
     </select>
     <select id="selectOne" resultMap="resultMapObj">		
     		SELECT 
@@ -55,6 +59,11 @@
  				WHERE 1=1
  					AND  seq = #{seq}
     </select>
+    
+    	<select id="selectOneCount" resultType="Integer">
+		SELECT count(*)
+		<include refid="selectCommon" />
+	</select>
     <!-- ㅡㅡㅡㅡㅡㅡ 업데이트 ㅡㅡㅡㅡㅡㅡ -->
     <update id="update">		
     			UPDATE commen_Group

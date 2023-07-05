@@ -16,7 +16,13 @@ public class CommenGroupDao {
 	private SqlSession sqlSession;
 	
 	private static String namespace = "com.mycompany.app.infra.commenGroup.CommenGroupMapper";
-	public List<CommenGroup> selectList(){ return sqlSession.selectList(namespace + ".selectList","" ); }
+	
+	public int selectOneCount(CommenGroupVo vo) {return sqlSession.selectOne(namespace + ".selectOneCount", vo); }
+
+	
+	  public List<CommenGroup> selectList(){ return sqlSession.selectList(namespace
+	  + ".selectList","" ); }
+	 
 	public List<CommenGroup> selectListsh(CommenGroupVo vo){ return sqlSession.selectList(namespace + ".selectListsh",vo ); }
 	public CommenGroup selectOne(CommenGroupVo vo){ return sqlSession.selectOne(namespace + ".selectOne", vo ); }
 	public int update(CommenGroup dto){ return sqlSession.update(namespace + ".update", dto ); }

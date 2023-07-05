@@ -2,7 +2,9 @@ package com.mycompany.app.infra.commenGroup;
 
 import java.sql.Timestamp;
 
-public class CommenGroupVo {
+import com.mycompany.app.infra.base.PageVo;
+
+public class CommenGroupVo extends PageVo {
 
 	
 	private String seq;

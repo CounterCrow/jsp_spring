@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
@@ -25,14 +26,36 @@ public class CommenGroupController {
 //		return "cdm/infra/commencodegroup/commenGroupList";
 //	}
 	
+	
 	@RequestMapping("/commenGroupList")
-	public String commenGroupListsh(CommenGroupVo vo,Model model) {
+	public String codeGroupList(@ModelAttribute("vo") CommenGroupVo vo, Model model) {
 		
-		List<CommenGroup> listsh = service.selectListsh(vo);
-		model.addAttribute("list",listsh);
+		vo.setKeywordCommenGroupName(vo.getKeywordCommenGroupName() == null ? "" : vo.getKeywordCommenGroupName());
+	
+		vo.setParamsPaging(service.selectOneCount(vo));
+		
+		if(vo.getTotalRows() > 0) {
+			List<CommenGroup> listsh = service.selectListsh(vo);
+			model.addAttribute("list", listsh);
+//			model.addAttribute("vo", vo);
+		} else {
+//			by pass
+		}
 		
 		return "cdm/infra/commencodegroup/commenGroupList";
 	}
+	
+	
+	
+	/*
+	 * @RequestMapping("/commenGroupList") public String
+	 * commenGroupListsh(CommenGroupVo vo,Model model) {
+	 * 
+	 * List<CommenGroup> listsh = service.selectListsh(vo);
+	 * model.addAttribute("list",listsh);
+	 * 
+	 * return "cdm/infra/commencodegroup/commenGroupList"; }
+	 */
 	@RequestMapping("/commenGroupForm")
 	public String commenGroupOne(CommenGroupVo vo,Model model) {
 		
